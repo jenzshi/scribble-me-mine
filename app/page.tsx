@@ -33,7 +33,6 @@ export default function HomePage() {
   const [filteredNotes, setFilteredNotes] = useState<Note[]>([]);
   const [newNote, setNewNote] = useState('');
   const [newTodo, setNewTodo] = useState('');
-  const [newTodoDeadline, setNewTodoDeadline] = useState<string>('');
   const [showCalendar, setShowCalendar] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [isFiltering, setIsFiltering] = useState(false);
