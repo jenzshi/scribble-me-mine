@@ -19,3 +19,41 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Add these at the bottom of your globals.css */
+
+/* Calendar Customization */
+.react-calendar {
+  background-color: transparent !important;
+  border: none !important;
+  font-family: inherit;
+}
+
+.react-calendar__tile--active {
+  background: #8b5cf6 !important;
+  border-radius: 0.5rem;
+}
+
+.react-calendar__tile--now {
+  background: #f3f4f6 !important;
+  border-radius: 0.5rem;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #ddd1f7 !important;
+  border-radius: 0.5rem;
+}
+
+.dark .react-calendar {
+  color: #fff;
+}
+
+.dark .react-calendar__tile--now {
+  background: #374151 !important;
+}
+
+.dark .react-calendar__tile:enabled:hover,
+.dark .react-calendar__tile:enabled:focus {
+  background-color: #4B5563 !important;
+}
