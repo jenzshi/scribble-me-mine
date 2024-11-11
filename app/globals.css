@@ -3,57 +3,54 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #6366f1; /* Indigo-500 */
+  --primary-foreground: #ffffff;
+  --background: #fafafa;
+  --foreground: #18181b;
+  --card: #ffffff;
+  --card-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --border: #e4e4e7;
+  --ring: #6366f1;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --primary: #818cf8; /* Indigo-400 */
+    --primary-foreground: #18181b;
+    --background: #18181b;
+    --foreground: #fafafa;
+    --card: #27272a;
+    --card-foreground: #fafafa;
+    --muted: #3f3f46;
+    --muted-foreground: #a1a1aa;
+    --border: #3f3f46;
+    --ring: #818cf8;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 }
 
-/* Add these at the bottom of your globals.css */
-
-/* Calendar Customization */
-.react-calendar {
-  background-color: transparent !important;
-  border: none !important;
-  font-family: inherit;
+/* Modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.react-calendar__tile--active {
-  background: #8b5cf6 !important;
-  border-radius: 0.5rem;
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-.react-calendar__tile--now {
-  background: #f3f4f6 !important;
-  border-radius: 0.5rem;
-}
-
-.react-calendar__tile:enabled:hover,
-.react-calendar__tile:enabled:focus {
-  background-color: #ddd1f7 !important;
-  border-radius: 0.5rem;
-}
-
-.dark .react-calendar {
-  color: #fff;
-}
-
-.dark .react-calendar__tile--now {
-  background: #374151 !important;
-}
-
-.dark .react-calendar__tile:enabled:hover,
-.dark .react-calendar__tile:enabled:focus {
-  background-color: #4B5563 !important;
+::-webkit-scrollbar-thumb {
+  @apply bg-border;
+  border-radius: 6px;
 }
